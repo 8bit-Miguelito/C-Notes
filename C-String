@@ -57,3 +57,17 @@ if (strcmp(text1, text2) == 0) {
   printf("Strings are not equal!");
 }
 
+My own defintion of strlen() function:
+
+char str[50];
+fgets(str, 50, stdin);
+
+int count = 0;
+int i = 0; 
+
+while (str[i] != '/0') {
+  count++;
+  i++;
+}
+
+printf("%d", count);
