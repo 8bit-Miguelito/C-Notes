@@ -1,0 +1,59 @@
+C-Notes - C-Strings
+
+String Declaration in C: 
+  -Char Array (Ex: char myStr[81];)
+  -Pointer (Ex: char* myPtr;)
+
+Pointers vs Stack Array:
+  A pointer can be allocated to the heap and can be changed dynamically by using the malloc() function. A stack array is also 
+mutable unless the pointer is pointing a string literal. The main difference is memory location. 
+
+-----------
+
+String Initialization:
+  -String Literal (Ex: char myStr[] = "abc";)
+
+  -Char Array (Ex: char myStr[] = {'a','b','c'};
+
+  -strcopy() {
+    --char str[10];
+    --strcopy(str, "Hello");
+  }
+
+  -scanf() {
+    --char str[50];
+    --scanf("%s", str);
+  }
+  *Note: if input exceeds array size, it can cause buffer overflow. Using scanf("%49s", str) limits char inputs to prevent overflow.
+
+ -fgets() { //Recommended for user input
+  --char str[50]
+  --fgets(str, 50, stdin)
+
+-----------
+
+Important String Functions in string.h:
+
+strcopy(text1, text2); //copies text2 onto text1
+strcat(text1, text2); //concatenates text2 to text1
+strlen(text1); //returns length of text1
+strcmp(text1, text2); //will return 0 if texts are equal
+strstr(text1, "abc") //finds abc in text1
+strrchr(text1, 'i') //find last character within a string
+strtok(str, " ") //split string into tokens
+
+
+Why is the /0 character so important?
+  -Defines the end of string, otherwise printf() or strlen() would not know where to stop.
+    --Potentially crash due to functions going beyond array boundaries.
+  -Most string functions use null as stopping character. 
+    --Prevents buffer overflow or memory errors 
+
+Quick use of string function:  
+
+if (strcmp(text1, text2) == 0) {
+  printf("Strings are equal!");
+} else {
+  printf("Strings are not equal!");
+}
+
