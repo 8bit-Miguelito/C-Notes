@@ -1,0 +1,27 @@
+Valgrind:
+•	Tool used in C for detecting memory issues such as memory leaks, invalid memory access, or uninitialized memory usage. It does this by monitoring memory allocations/deallocations.
+•	Flags:
+•	Memory Leak:
+o	valgrind –leak-check=yes ./myprogram
+•	Detecting Uninitialized Memory:
+o	Valgrind -track-origin=yes ./myprogram
+
+GDB:
+•	Tool used in C/C++ for detecting what the program is doing at certain points. Includes detecting segmentation faults and other crashes. It also allows you to stop at specific points.
+•	Some commands include:
+o	(gdb) run; (gdb) quit; (gdb) break 15 #breaks at line 15;
+
+GUI Debugger (Xcode)
+•	Tools allowing for debugging and to visually go through the code by adding breakpoints, and inspecting variables. 
+•	You can click left of the line to set breakpoints. Meaning the debugger will run up to that line.
+•	Step Over/In/Out allows one to execute lines without function calls, call a function, or exit current function.
+•	Variables View displays local and global variables
+
+Similarities
+•	All programs are used for debugging
+•	Provide breakpoints
+•	GDB and Xcode allow line by line execution
+•	
+Differences
+•	Valgrind is used for memory debugging and GDB is used to inspect crashes, logic erros, and segmentation faults. Xcode used GUI system for higher level of inspection than GDB.
+•	Xcode is beginner friendly while Valgrind and GDB are command line based
